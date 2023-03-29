@@ -1,0 +1,44 @@
+la programation imperative c'est quand on code chaque partie de notre programme de façon ordoné (séquence clairement définie d'instructions)
+les components doit toujour commencé par une majuscule
+il est recomendé de faire pour chaque fonctionalité un nouveau composant
+avec le jsx on peut ecrire <div /> si la div ne contient aucun element
+on peut passer une fonction comme props (ref:udemy next js & react, 2.optional refresher => V16 working with Event Props)
+il existe un tag html address
+
+{modalIsOpen ? <Modal /> : null}
+{modalIsOpen && <Modal />}
+
+extraire un path dynamique (ref: udemy next js & react, 3 => v8)
+
+faire une redirection dans une fontion (ref: UNJ&R, 3 => v14)
+ajouter une page 404 personalusé (ref: UNJ&R, 3 => v15)
+Date.toLocalDateString pour gerrer l'affichage de nos dates
+
+Two form of pre-rendering
+    Static Generation : pre-generate a page (with data prepared on the server-side) during build time
+            rendu par defaut de site static
+            export async function getStaticProps(context){...} : si on a besoin de données exterieur (cms, ex: sanity)
+            getStaticProps can return these object: not-found, redirect  
+        Incremental Static Generation: Pre-generate a page on every request, at most every X seconds
+            serve "old" page if re-generation is not needed yet
+            generate, store and serve "new" page otherwise
+            to use ISG :in the function getStaticProps return revalidate: 
+        
+    Server-side Rendering: pre-render for every request OR access to the request object
+        export async function getServerSideProps() {...}
+    
+lors du prerendering de pages dynamique nous avons besoin d'utiliser getStaticPath. on peut retourner ces propriétés:
+    paths, not-found, fallback: false, true, 'blocking'
+
+
+
+
+-----------------------------
+En JavaScript, la méthode function.bind() preconfigure la fonction pour une utilisation ulterieure (permet de lier une méthode à un objet spécifique. 
+    Cela signifie que lorsque vous appelez cette méthode liée, le contexte d'exécution (this) est défini sur cet objet spécifique, plutôt que sur l'objet qui a appelé la méthode.)
+par exemple: 
+    function loadFeedbackHandle(id)
+    buton.onClick = loadFeedbackHandle.bind(null, id) // null: this keyword, id: le premier parametre de la function
+
+The find() method in JavaScript is used to search for a specific element in an array and returns the first element that satisfies the provided testing function. If no element is found, it returns undefined.
+    exemple: const result = numbers.find(number => number > 3); //returns the first element that satisfies the provided testing function
